@@ -12,7 +12,6 @@ class Poker {
       );
       const deck = await response.json();
       this.deck = deck.deck_id;
-      console.log(this);
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +29,12 @@ class Poker {
         this.deck = hand.deck_id;
       }
       this.hand = hand.cards;
-      console.log(this);
+      for (let i = 0; i < this.hand.length; i++) {
+        console.log("\n");
+        console.log(`Card ${i + 1}:`);
+        console.log(`Value: ${this.hand[i].value}`);
+        console.log(`Suit: ${this.hand[i].suit}`);
+      }
     } catch (error) {
       console.log(error);
     }
