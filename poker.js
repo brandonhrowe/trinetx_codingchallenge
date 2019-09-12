@@ -160,14 +160,17 @@ class Poker {
     console.log("Your top scoring hand is:");
     console.log(message);
   }
+
+  async play() {
+    await this.shuffle();
+    await this.deal();
+    this.topScoringHand();
+  }
 }
 
-const pokerHand = new Poker();
+module.exports = Poker;
 
-const func = async game => {
-  await game.shuffle();
-  await game.deal();
-  game.topScoringHand();
-};
-
-func(pokerHand);
+if (typeof require !== 'undefined' && require.main === module) {
+  const pokerHand = new Poker();
+  pokerHand.play();
+}
