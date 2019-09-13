@@ -56,7 +56,7 @@ class Poker {
   }
 
   straightHelper(arr) {
-    if (arr.length !== 5) return false
+    if (arr.length !== 5) return false;
     arr.sort((a, b) => a - b);
     for (let i = 0; i < arr.length - 1; i++) {
       if (arr[i + 1] - arr[i] !== 1) {
@@ -157,21 +157,22 @@ class Poker {
       secondMostFrequent
     );
 
-    console.log("\n");
-    console.log("Your top scoring hand is:");
-    console.log(message);
+    return message;
   }
 
   async play() {
     await this.shuffle();
     await this.deal();
-    this.topScoringHand();
+    let message = this.topScoringHand();
+    console.log("\n");
+    console.log("Your top scoring hand is:");
+    console.log(message);
   }
 }
 
 module.exports = Poker;
 
-if (typeof require !== 'undefined' && require.main === module) {
+if (typeof require !== "undefined" && require.main === module) {
   const pokerHand = new Poker();
   pokerHand.play();
 }

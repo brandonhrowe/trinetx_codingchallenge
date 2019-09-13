@@ -191,32 +191,240 @@ describe("Poker Hand", () => {
   });
 
   describe("topScoringHand method", () => {
-    let cards = [
+    let straightFlush = [
       {
         value: "QUEEN",
-        suit: "SPADES",
-        code: "QS"
+        suit: "CLUBS"
+      },
+      {
+        value: "9",
+        suit: "CLUBS"
+      },
+      {
+        value: "10",
+        suit: "CLUBS"
+      },
+      {
+        value: "JACK",
+        suit: "CLUBS"
+      },
+      {
+        value: "KING",
+        suit: "CLUBS"
+      }
+    ];
+    let fourOfAKind = [
+      {
+        value: "QUEEN",
+        suit: "CLUBS"
+      },
+      {
+        value: "QUEEN",
+        suit: "DIAMONDS"
+      },
+      {
+        value: "QUEEN",
+        suit: "SPADES"
+      },
+      {
+        value: "QUEEN",
+        suit: "HEARTS"
+      },
+      {
+        value: "KING",
+        suit: "CLUBS"
+      }
+    ];
+    let fullHouse = [
+      {
+        value: "QUEEN",
+        suit: "CLUBS"
+      },
+      {
+        value: "QUEEN",
+        suit: "DIAMONDS"
+      },
+      {
+        value: "QUEEN",
+        suit: "SPADES"
+      },
+      {
+        value: "JACK",
+        suit: "HEARTS"
+      },
+      {
+        value: "JACK",
+        suit: "CLUBS"
+      }
+    ];
+    let flush = [
+      {
+        value: "QUEEN",
+        suit: "CLUBS"
+      },
+      {
+        value: "7",
+        suit: "CLUBS"
+      },
+      {
+        value: "2",
+        suit: "CLUBS"
       },
       {
         value: "4",
-        suit: "CLUBS",
-        code: "4C"
+        suit: "CLUBS"
+      },
+      {
+        value: "KING",
+        suit: "CLUBS"
+      }
+    ];
+    let straight = [
+      {
+        value: "3",
+        suit: "CLUBS"
+      },
+      {
+        value: "2",
+        suit: "HEARTS"
+      },
+      {
+        value: "4",
+        suit: "DIAMONDS"
       },
       {
         value: "6",
-        suit: "DIAMONDS",
-        code: "6D"
+        suit: "CLUBS"
       },
       {
-        value: "KING",
-        suit: "CLUBS",
-        code: "KC"
-      },
-      {
-        value: "KING",
-        suit: "DIAMONDS",
-        code: "KD"
+        value: "5",
+        suit: "SPADES"
       }
     ];
+    let threeOfAKind = [
+      {
+        value: "3",
+        suit: "CLUBS"
+      },
+      {
+        value: "3",
+        suit: "HEARTS"
+      },
+      {
+        value: "3",
+        suit: "DIAMONDS"
+      },
+      {
+        value: "6",
+        suit: "CLUBS"
+      },
+      {
+        value: "5",
+        suit: "SPADES"
+      }
+    ];
+    let twoPair = [
+      {
+        value: "3",
+        suit: "CLUBS"
+      },
+      {
+        value: "3",
+        suit: "HEARTS"
+      },
+      {
+        value: "6",
+        suit: "DIAMONDS"
+      },
+      {
+        value: "6",
+        suit: "CLUBS"
+      },
+      {
+        value: "5",
+        suit: "SPADES"
+      }
+    ];
+    let onePair = [
+      {
+        value: "3",
+        suit: "CLUBS"
+      },
+      {
+        value: "3",
+        suit: "HEARTS"
+      },
+      {
+        value: "6",
+        suit: "DIAMONDS"
+      },
+      {
+        value: "7",
+        suit: "CLUBS"
+      },
+      {
+        value: "5",
+        suit: "SPADES"
+      }
+    ];
+    let highCard = [
+      {
+        value: "3",
+        suit: "CLUBS"
+      },
+      {
+        value: "KING",
+        suit: "HEARTS"
+      },
+      {
+        value: "6",
+        suit: "DIAMONDS"
+      },
+      {
+        value: "7",
+        suit: "CLUBS"
+      },
+      {
+        value: "5",
+        suit: "SPADES"
+      }
+    ];
+    it("returns straight flush correctly", () => {
+      hand.hand = straightFlush;
+      hand.topScoringHand();
+      expect(hand.topScoringHand()).to.equal("Straight flush");
+    });
+    it("returns four of a kind correctly", () => {
+      hand.hand = fourOfAKind;
+      expect(hand.topScoringHand()).to.equal("Four of a kind");
+    });
+    it("returns full house correctly", () => {
+      hand.hand = fullHouse;
+      expect(hand.topScoringHand()).to.equal("Full house");
+    });
+    it("returns flush correctly", () => {
+      hand.hand = flush;
+      expect(hand.topScoringHand()).to.equal("Flush");
+    });
+    it("returns straight correctly", () => {
+      hand.hand = straight;
+      expect(hand.topScoringHand()).to.equal("Straight");
+    });
+    it("returns three of a kind correctly", () => {
+      hand.hand = threeOfAKind;
+      expect(hand.topScoringHand()).to.equal("Three of a kind");
+    });
+    it("returns two pair correctly", () => {
+      hand.hand = twoPair;
+      expect(hand.topScoringHand()).to.equal("Two pair");
+    });
+    it("returns one pair correctly", () => {
+      hand.hand = onePair;
+      expect(hand.topScoringHand()).to.equal("One pair");
+    });
+    it("returns high card correctly", () => {
+      hand.hand = highCard;
+      expect(hand.topScoringHand()).to.equal("High card");
+    });
   });
 });
