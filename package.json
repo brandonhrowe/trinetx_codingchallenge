@@ -4,7 +4,7 @@
   "description": "TriNetX Coding Challenge by Brandon Rowe",
   "main": "poker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha poker.spec.js"
   },
   "author": "Brandon Rowe",
   "license": "ISC",
