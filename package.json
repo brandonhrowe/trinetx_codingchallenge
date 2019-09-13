@@ -4,6 +4,7 @@
   "description": "TriNetX Coding Challenge by Brandon Rowe",
   "main": "poker.js",
   "scripts": {
+    "start": "node poker.js",
     "test": "mocha poker.spec.js"
   },
   "author": "Brandon Rowe",

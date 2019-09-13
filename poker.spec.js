@@ -190,7 +190,33 @@ describe("Poker Hand", () => {
     });
   });
 
-  // describe("topScoringHand method", () => {
-
-  // })
+  describe("topScoringHand method", () => {
+    let cards = [
+      {
+        value: "QUEEN",
+        suit: "SPADES",
+        code: "QS"
+      },
+      {
+        value: "4",
+        suit: "CLUBS",
+        code: "4C"
+      },
+      {
+        value: "6",
+        suit: "DIAMONDS",
+        code: "6D"
+      },
+      {
+        value: "KING",
+        suit: "CLUBS",
+        code: "KC"
+      },
+      {
+        value: "KING",
+        suit: "DIAMONDS",
+        code: "KD"
+      }
+    ];
+  });
 });
